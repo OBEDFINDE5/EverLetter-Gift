@@ -1,0 +1,209 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EverLetter</title>
+<meta name="description" content="Create a personal digital gift with your words, memories, music, and a voice that brings every message to life.">
+<meta property="og:title" content="EverLetter">
+<meta property="og:description" content="Create a personal digital gift with your words, memories, music, and a voice that brings every message to life.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf5ec;--ink:#2a1e1e;--mut:#7a6a68;--card:#fffdf8;--line:#e6d9c3;--acc:#7a1f3d;--gold:#b8923f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15121a;--ink:#f3eadb;--mut:#a79c9a;--card:#201b27;--line:#3a3244;--acc:#e08aa5;--gold:#d9b66a}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3,.disp{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.logo{font:600 1.5rem 'Cormorant Garamond',serif;color:var(--acc);text-decoration:none;cursor:pointer}
+.btn{border:1px solid var(--acc);background:var(--acc);color:#fff;padding:12px 22px;border-radius:999px;cursor:pointer;font-weight:500}
+.btn.ghost{background:transparent;color:var(--acc)}.btn.sm{padding:7px 14px;font-size:.85rem}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{text-align:center;padding:56px 0 30px}.hero h1{font-size:clamp(2.4rem,8vw,4.6rem);max-width:12em;margin:0 auto 18px}
+.hero p{max-width:34em;margin:0 auto 26px;color:var(--mut)}.row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:30px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+.card h3{font-size:1.4rem;margin-bottom:6px;color:var(--acc)}.card p{margin:0;color:var(--mut);font-size:.95rem}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:500}
+footer{text-align:center;color:var(--mut);font-size:.85rem;padding:30px 0}
+.studio{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:800px){.studio{grid-template-columns:1fr}}
+label{display:block;font-size:.85rem;color:var(--mut);margin:12px 0 4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+textarea{min-height:150px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chk{display:flex;gap:8px;align-items:center;margin-top:12px;color:var(--ink);font-size:.95rem}.chk input{width:auto}
+.prev{position:sticky;top:10px;height:min(78vh,640px);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.out{margin-top:14px;padding:14px;border:1px dashed var(--gold);border-radius:12px;word-break:break-all;font-size:.8rem}
+/* gift */
+.gift{--p:#fbf3e4;--t:#3a2424;--a:#7a1f3d;--g:#b8923f;--bg1:#f5e6d3;--bg2:#e9c9c0;position:relative;height:100%;min-height:100dvh;overflow:auto;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--t);text-align:center}
+.prev .gift{min-height:100%}
+.gift[data-th=midnight]{--p:#1c2540;--t:#f0e6cf;--a:#e0c070;--g:#e0c070;--bg1:#0c1226;--bg2:#222a52}
+.gift[data-th=gold]{--p:#fffaf0;--t:#33291a;--a:#9a7420;--g:#c9a24a;--bg1:#fbf1d6;--bg2:#e9d29a}
+.gift[data-th=sage]{--p:#f7faf3;--t:#243326;--a:#3f6b4a;--g:#a8b585;--bg1:#e6eedb;--bg2:#c9dcc4}
+.sc{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 18px;gap:18px;animation:fi .8s both}
+@keyframes fi{from{opacity:0;transform:translateY(10px)}}
+.gift h2{font-size:clamp(2rem,6vw,3rem);color:var(--a)}.gift .sub{opacity:.8;max-width:26em}
+.gift .btn{background:var(--a);border-color:var(--a);color:var(--p)}.gift .btn.ghost{background:transparent;color:var(--a)}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--g);animation:tw 3s infinite alternate;pointer-events:none}
+@keyframes tw{from{opacity:.1}to{opacity:.9;transform:scale(2)}}
+.env{position:relative;width:200px;height:132px;background:var(--g);border-radius:6px;box-shadow:0 14px 30px #0004;animation:fl 4s ease-in-out infinite alternate}
+.env:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 50%,#0002 50%),linear-gradient(225deg,transparent 50%,#0002 50%);border-radius:6px}
+.flap{position:absolute;top:0;left:0;width:100%;height:70px;background:var(--g);clip-path:polygon(0 0,100% 0,50% 100%);filter:brightness(.88);transform-origin:top;transition:transform 1s}
+.seal{position:absolute;top:52px;left:50%;margin-left:-16px;width:32px;height:32px;border-radius:50%;background:var(--a);display:grid;place-items:center;color:var(--p);transition:opacity .5s;z-index:2}
+.env.open .flap{transform:rotateX(180deg)}.env.open .seal{opacity:0}
+.box{position:relative;width:150px;height:130px;animation:fl 4s ease-in-out infinite alternate}
+.box .b{position:absolute;bottom:0;width:100%;height:90px;background:var(--a);border-radius:4px}.box .b:after,.box .l:after{content:"";position:absolute;left:50%;margin-left:-9px;top:0;bottom:0;width:18px;background:var(--g)}
+.box .l{position:absolute;top:10px;left:-8px;width:166px;height:38px;background:var(--a);filter:brightness(1.15);border-radius:4px;transition:transform 1s}.box.open .l{transform:translateY(-70px) rotate(-14deg)}
+@keyframes fl{to{transform:translateY(-8px)}}
+.cf{position:absolute;top:-10px;width:8px;height:14px;animation:cf 3.5s linear forwards;pointer-events:none}
+@keyframes cf{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+.paper{background:var(--p);color:var(--t);width:min(640px,100%);padding:34px 28px;border-radius:6px;box-shadow:0 18px 40px #0003;text-align:left;font:1.2rem/1.75 'Cormorant Garamond',Georgia,serif;font-weight:500;animation:fi 1s both}
+.paper .gr{font-size:1.5rem;color:var(--a)}.paper p{margin:0 0 1em}.s{transition:opacity .9s,background .3s;border-radius:4px}.s.hid{opacity:0}.s.on{background:color-mix(in srgb,var(--g) 35%,transparent)}
+.sig{font:600 2rem Caveat,cursive;color:var(--a);margin-top:14px}
+.ctl{position:sticky;bottom:0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;padding:10px;background:color-mix(in srgb,var(--p) 88%,transparent);backdrop-filter:blur(6px);width:100%;font-size:.85rem}
+.ctl select,.ctl input{width:auto;padding:4px 6px;background:var(--p);color:var(--t)}.ctl input[type=range]{padding:0;width:80px}
+.bar{height:3px;background:#0002;width:100%}.bar i{display:block;height:100%;width:0;background:var(--a);transition:width .4s}
+.skip{position:absolute;top:10px;right:12px;z-index:5;font-size:.8rem;padding:6px 12px}
+.emo button{font-size:1.6rem;background:none;border:0;cursor:pointer;padding:6px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style></head><body><div id="app"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+function el(t,a={},...k){const e=document.createElement(t);for(const[x,v]of Object.entries(a)){if(x==='on')for(const[ev,f]of Object.entries(v))e.addEventListener(ev,f);else if(x==='class')e.className=v;else e.setAttribute(x,v)}k.flat(Infinity).forEach(c=>e.append(c&&c.nodeType?c:document.createTextNode(c??'')));return e}
+const SAMPLE={occ:'Birthday',to:'Ama',from:'Kofi',title:'Happy Birthday, Ama',greet:'Dearest Ama,',msg:"Today I wanted to pause and tell you what you mean to me. You have been my laughter on hard days and my calm in every storm.\n\nThank you for every late-night call and every honest word. I hope this year gives back to you everything you have given to others.",close:'Made with love, especially for you.',sig:'Kofi',fmt:'letter',th:'gold',prog:true,voice:'',rate:0.92};
+const enc=g=>btoa(unescape(encodeURIComponent(JSON.stringify(g)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+const dec=s=>{try{return JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g,'+').replace(/_/g,'/')))))}catch(e){return null}};
+const clean=g=>{const S=(v,n)=>String(v??'').slice(0,n);return{occ:S(g.occ,40),to:S(g.to,60),from:S(g.from,60),title:S(g.title,120),greet:S(g.greet,120),msg:S(g.msg,4000),close:S(g.close,200),sig:S(g.sig,60),fmt:['letter','box','birthday'].includes(g.fmt)?g.fmt:'letter',th:['gold','midnight','sage','rose'].includes(g.th)?g.th:'gold',prog:!!g.prog,voice:S(g.voice,200),rate:Math.min(1.4,Math.max(.6,+g.rate||.92))}};
+const reduce=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+/* ---------- Recipient experience ---------- */
+function renderGift(root,g,opts={}){
+root.innerHTML='';const tts='speechSynthesis'in window;let timers=[],idx=0,speaking=false,paused=false,spans=[],vol=1;
+const W=el('div',{class:'gift','data-th':g.th});root.append(W);
+const later=(f,ms)=>timers.push(setTimeout(f,ms));
+const stage=n=>{timers.forEach(clearTimeout);timers=[];tts&&speechSynthesis.cancel();speaking=false;W.innerHTML='';W.scrollTop=0;n()};
+for(let i=0;i<24;i++){const s=el('i',{class:'star'});s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s`;W.append(s)}
+function arrive(){stage(()=>{
+ const art=g.fmt==='box'?el('div',{class:'box',id:'art'},el('div',{class:'b'}),el('div',{class:'l'})):g.fmt==='birthday'?el('div',{id:'art',style:'font-size:5rem'},'🎂'):el('div',{class:'env',id:'art'},el('div',{class:'flap'}),el('div',{class:'seal'},'♥'));
+ const b=el('button',{class:'btn',on:{click:reveal}},'Open Your Gift');
+ W.append(el('div',{class:'sc'},el('p',{class:'sub'},'Someone has something special for you.'),art,el('h2',{class:'disp'},'For '+g.to),el('p',{class:'sub'},'From '+g.from),b));b.focus({preventScroll:true})})}
+function confetti(){if(reduce())return;const c=['#d9a441','#c2485f','#5b8def','#6bbf8a'];for(let i=0;i<50;i++){const d=el('i',{class:'cf'});d.style.cssText=`left:${Math.random()*100}%;background:${c[i%4]};animation-delay:${Math.random()*.8}s`;W.append(d);setTimeout(()=>d.remove(),4500)}}
+function reveal(){const art=$('#art',W);art&&art.classList.add('open');if(g.fmt==='birthday')confetti();
+ const sk=el('button',{class:'btn ghost sm skip',on:{click:letter}},'Skip animation');W.append(sk);later(letter,reduce()?50:1700)}
+function letter(){stage(()=>{
+ const paras=g.msg.split(/\n{2,}/).filter(x=>x.trim());spans=[];
+ const paper=el('div',{class:'paper'},el('div',{class:'gr'},g.greet||('Dear '+g.to+',')));
+ if(g.title)paper.insertBefore(el('h2',{class:'disp',style:'margin-bottom:10px'},g.title),paper.firstChild);
+ paras.forEach(p=>{const pe=el('p');(p.match(/[^.!?]+[.!?]*\s*/g)||[p]).forEach(t=>{const s=el('span',{class:'s'+(g.prog?' hid':'')},t);spans.push(s);pe.append(s)});paper.append(pe)});
+ paper.append(el('div',{class:'sig'},g.sig||g.from));
+ const bar=el('div',{class:'bar'},el('i',{id:'pg'}));
+ const play=el('button',{class:'btn sm',on:{click:togglePlay}},'▶ Listen'),rp=el('button',{class:'btn ghost sm',on:{click:()=>{idx=0;speak()}}},'↺ Replay'),fin=el('button',{class:'btn ghost sm',on:{click:ending}},'Continue →');
+ const rate=el('input',{type:'range',min:.6,max:1.4,step:.1,value:g.rate,'aria-label':'Narration speed',on:{input:e=>g.rate=+e.target.value}});
+ const volr=el('input',{type:'range',min:0,max:1,step:.1,value:1,'aria-label':'Volume',on:{input:e=>vol=+e.target.value}});
+ const vs=el('select',{'aria-label':'Voice',on:{change:e=>g.voice=e.target.value}});
+ const fill=()=>{vs.innerHTML='';speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang)).forEach(v=>{const o=el('option',{value:v.name},v.name);if(v.name===g.voice)o.selected=true;vs.append(o)})};
+ const ctl=el('div',{class:'ctl'},play,rp,tts?['Speed',rate,'Vol',volr,vs]:el('span',{},'Narration isn’t supported on this device — the letter is fully readable.'),fin);
+ if(tts){fill();speechSynthesis.onvoiceschanged=fill}else{play.disabled=rp.disabled=true}
+ W.append(el('div',{class:'sc',style:'justify-content:flex-start;padding-bottom:0'},paper),bar,ctl);
+ const showTo=i=>spans.forEach((s,j)=>{if(j<=i)s.classList.remove('hid')});
+ const hl=i=>{spans.forEach((s,j)=>s.classList.toggle('on',j===i));showTo(i);$('#pg',W).style.width=((i+1)/spans.length*100)+'%';spans[i]&&spans[i].scrollIntoView({block:'center',behavior:reduce()?'auto':'smooth'})};
+ function speak(){if(!tts)return;speechSynthesis.cancel();speaking=true;paused=false;play.textContent='⏸ Pause';
+  const go=i=>{if(!speaking)return;if(i>=spans.length){speaking=false;play.textContent='▶ Listen';idx=0;spans.forEach(s=>s.classList.remove('on'));return}
+   idx=i;const u=new SpeechSynthesisUtterance(spans[i].textContent.trim());const v=speechSynthesis.getVoices().find(v=>v.name===g.voice);if(v)u.voice=v;u.rate=g.rate;u.volume=vol;u.pitch=1;
+   u.onstart=()=>hl(i);u.onend=()=>go(i+1);u.onerror=e=>{if(e.error!=='canceled'&&e.error!=='interrupted'){speaking=false;play.textContent='▶ Listen'}};speechSynthesis.speak(u)};go(idx)}
+ function togglePlay(){if(speaking){speechSynthesis.cancel();speaking=false;paused=true;play.textContent='▶ Resume'}else speak()}
+ if(g.prog){let i=0;const step=()=>{if(speaking)return;if(i<spans.length){showTo(i++);later(step,1100)}};later(step,600)}
+ })}
+function ending(){stage(()=>{const emo=el('div',{class:'emo'});['❤️','😭','🙏','🎉'].forEach(e=>emo.append(el('button',{'aria-label':'React '+e,on:{click:ev=>{emo.append(el('p',{class:'sub'},'Reaction sent to '+g.from+' ✓ (demo: not stored)'));emo.querySelectorAll('button').forEach(b=>b.disabled=true)}}},e)));
+ W.append(el('div',{class:'sc'},el('h2',{class:'disp'},g.close||'Made with love, especially for you.'),el('div',{class:'sig'},'— '+(g.sig||g.from)),emo,el('div',{class:'row'},el('button',{class:'btn',on:{click:arrive}},'Replay the gift'),opts.preview?'':el('a',{class:'btn ghost',href:'#/',style:'text-decoration:none'},'Create your own'))));confetti()})}
+arrive();return()=>{timers.forEach(clearTimeout);tts&&speechSynthesis.cancel()}}
+
+
+const TONES={
+love:{
+'Birthday':[`Happy birthday, my love. Today the world celebrates the day you were born, and I celebrate everything you are.\n\nThank you for your patience, your laughter and the way you make ordinary days feel special. I hope this year brings you all the joy you give so freely.\n\nI'm so lucky to be yours.`,'Forever celebrating you.'],
+'Anniversary':[`Another year with you, and I would choose you all over again.\n\nThrough every season we've grown, laughed and learned to love each other better. Thank you for staying, for trying, and for being my home.\n\nHere's to many more years together.`,'Yours, today and always.'],
+'Monthly anniversary':[`Another month of us, and my heart is just as full as the first day.\n\nI'm grateful for every message, every laugh and every little moment we shared this month. Time with you always feels too short.\n\nThank you for being you.`,`Here's to every month with you.`],
+'Good morning':[`Good morning, my love. Before the day gets busy, I wanted you to know you were the first thing on my mind.\n\nI hope you slept well and that today is gentle with you. Drink some water, eat something good, and remember I'm cheering for you.\n\nTalk soon.`,'Have a beautiful day.'],
+'Checking in':[`I just wanted to check on you. How are you really doing today?\n\nIf it's been a heavy day, I'm here. If it's been a good one, I want to hear every detail. Either way, you don't have to carry anything alone.\n\nI love you.`,'Always on your side.'],
+'Missing you':[`I miss you, and I wanted you to know it.\n\nDistance and busy schedules can't change how close you are to my heart. I'm counting down to the next time I see you.\n\nUntil then, hold on to this.`,'Thinking of you always.'],
+'Sorry':[`I'm sorry. I've been thinking about what happened, and I want to take responsibility for how I hurt you.\n\nYou deserve honesty and care, and I'm committed to doing better. I'm ready to listen whenever you are.\n\nThank you for being patient with me.`,'With love and a sincere apology.'],
+'Just because':[`No special reason. I just wanted you to know how much you mean to me.\n\nYou make my life brighter in a thousand small ways. I'm grateful for you today and every day.`,'Just because I love you.']},
+family:{
+'Birthday':[`Happy birthday! Today is all about you.\n\nThank you for everything you've done for me, big and small. Your love and support have shaped who I am. I hope this year brings you good health, peace and plenty of reasons to smile.\n\nI love you more than words can say.`,'Celebrating you today and always.'],
+'Checking in':[`I'm just checking in to see how you're doing.\n\nI know life gets busy, but you're always in my thoughts. I hope you're taking care of yourself, eating well and getting rest. If you need anything at all, just call me.\n\nI love you.`,'Always here for you.'],
+'Good morning':[`Good morning! I hope you slept well and that today is kind to you.\n\nI wanted to start my day by thinking of you and sending my love. Take it easy, and take care of yourself.`,'Have a blessed day.'],
+'Thank you':[`I want to say thank you, and I don't say it enough.\n\nThank you for your sacrifices, your advice, and the many times you were there without being asked. I notice, and I'm grateful.\n\nYou are appreciated more than you know.`,'With all my gratitude.'],
+'Just because':[`No special occasion. I just wanted you to know I'm thinking of you and that I'm grateful to have you in my life.\n\nFamily is the greatest gift, and you are a big part of mine.`,'Love always.'],
+'Encouragement':[`I know things may feel heavy right now, and I want you to know I'm in your corner.\n\nYou have faced hard things before and come through. Be gentle with yourself, rest when you need to, and lean on me.\n\nBetter days are coming.`,'You are not alone.']},
+friend:{
+'Birthday':[`Happy birthday! Another year older, and somehow still the best company I know.\n\nThank you for the laughs, the honest advice and for showing up when it counts. I hope this year is full of adventure, good food and everything you've been wishing for.\n\nLet's celebrate soon!`,'Cheers to you!'],
+'Checking in':[`Just checking in. How have you been?\n\nWe all get busy, but I never stop caring. If you want to talk, vent or just laugh about nothing, I'm a message away.\n\nHope you're doing well.`,'Your friend, always.'],
+'Thank you':[`Thank you for being such a good friend.\n\nYou've supported me in ways you may not even realise, and I'm so grateful. Friends like you are rare.\n\nI appreciate you.`,'With heartfelt thanks.'],
+'Congratulations':[`Congratulations! I'm so proud of you.\n\nI've seen the effort and patience behind this, and you earned every bit of it. I can't wait to see what you do next.\n\nGo celebrate properly!`,'Proud of you!'],
+'Encouragement':[`I know it's been tough lately, and I want you to hear this: you've got this.\n\nYou're stronger and more capable than you feel today. One step at a time is enough, and I'll be right here cheering you on.`,'I believe in you.']},
+kid:{
+'Birthday':[`Happy birthday! I hope your day is full of cake, games and fun.\n\nYou are growing into such a wonderful person, and I'm so proud of you. Never stop being curious, kind and brave.\n\nI love you very much!`,'Have the best birthday ever!'],
+'Checking in':[`I was thinking about you and wanted to see how you're doing.\n\nHow is school? What was the best part of your week? Remember you can always talk to me about anything.\n\nSending big hugs.`,'Love you lots!'],
+'Proud of you':[`I want you to know how proud I am of you.\n\nYour hard work and kind heart make a big difference. Keep believing in yourself.\n\nYou can do amazing things.`,'So proud of you!'],
+'Encouragement':[`Some days are hard, and that's okay. You are braver than you think.\n\nKeep trying, keep learning, and remember that I believe in you every step of the way.`,`You've got this!`]}};
+const TITLES={'Birthday':'Happy Birthday, {to}','Anniversary':'Happy Anniversary','Monthly anniversary':'Happy Monthiversary','Good morning':'Good Morning, {to}','Checking in':'Thinking of You','Missing you':'I Miss You','Sorry':'I’m Sorry','Just because':'Just Because','Thank you':'Thank You','Congratulations':'Congratulations!','Encouragement':'You’ve Got This','Proud of you':'So Proud of You'};
+const GREET={love:'My dearest {to},',family:'Dear {to},',kid:'Dear {to},',friend:'Hey {to},'};
+const RELS=[['Girlfriend','love'],['Boyfriend','love'],['Wife','love'],['Husband','love'],['Mom','family'],['Dad','family'],['Brother','family'],['Sister','family'],['Sibling','family'],['Grandparent','family'],['Aunt or Uncle','family'],['Cousin','family'],['Nephew','kid'],['Niece','kid'],['Son','kid'],['Daughter','kid'],['Friend','friend'],['Best friend','friend'],['Colleague','friend'],['Teacher','friend']];
+let PRE=null;
+const PAY={link:'https://paystack.shop/pay/4xsu8lomgm',amount:'GHS 20'}; /* paste your Paystack payment page link into link */
+const tpl=(tone,sc,to,from)=>{const r=x=>x.replace(/\{to\}/g,to||'[Name]').replace(/\{from\}/g,from||'[Your name]'),t=TONES[tone][sc];return{title:r(TITLES[sc]),greet:r(GREET[tone]),msg:r(t[0]),close:r(t[1])}};
+function picker(){let rel=null;const box=el('div',{class:'card'});const draw=()=>{box.innerHTML='';box.append(el('h3',{},rel?'What is the moment for your '+rel[0].toLowerCase()+'?':'Who is the gift for?'));const row=el('div',{class:'row'});
+if(!rel)RELS.forEach(r=>row.append(el('button',{class:'btn ghost sm',on:{click:()=>{rel=r;draw()}}},r[0])));
+else{Object.keys(TONES[rel[1]]).forEach(sc=>row.append(el('button',{class:'btn ghost sm',on:{click:()=>{PRE={rel:rel[0],tone:rel[1],sc};location.hash='#/create'}}},sc)));row.append(el('button',{class:'btn sm',on:{click:()=>{rel=null;draw()}}},'← Change person'))}
+box.append(row,el('p',{style:'color:var(--mut);font-size:.85rem;margin:12px 0 0'},rel?'You can rewrite every word before sending.':'Pick a person, then the moment. We’ll start you off with a message.'))};draw();return box}
+
+/* ---------- Pages ---------- */
+let stop=()=>{};const app=$('#app');
+function shell(...k){stop();app.innerHTML='';app.append(el('div',{class:'wrap'},el('nav',{},el('a',{class:'logo',href:'#/'},'EverLetter ✉'),el('div',{class:'row'},el('a',{class:'btn ghost sm',href:'#/sample',style:'text-decoration:none'},'Sample'),el('a',{class:'btn sm',href:'#/create',style:'text-decoration:none'},'Create a Gift'))),k))}
+function home(){const occ=['Birthday','Anniversary','Friendship','Graduation','Appreciation','Apology','Wedding','Valentine’s','Encouragement','Just Because'];
+shell(el('section',{class:'hero'},el('h1',{class:'disp'},'Some feelings deserve more than a message.'),el('p',{},'Create a personal digital gift with your words, memories, music, and a voice that brings every message to life. Send it to someone special with one simple link.'),el('div',{class:'row'},el('a',{class:'btn',href:'#/create',style:'text-decoration:none'},'Create a Gift'),el('a',{class:'btn ghost',href:'#/sample',style:'text-decoration:none'},'Experience a Sample Gift'))),
+el('div',{class:'grid'},[['1 · Write','Add names, a heartfelt letter and a closing line.'],['2 · Design','Pick a format and theme with a live preview.'],['3 · Send','Copy one link to WhatsApp, email or SMS.']].map(([a,b])=>el('div',{class:'card'},el('h3',{},a),el('p',{},b)))),
+el('h2',{class:'disp',style:'text-align:center;margin:20px 0'},'Send a gift to someone special'),picker(),el('h2',{class:'disp',style:'text-align:center;margin:30px 0 14px'},'Or start from an occasion'),el('div',{class:'row'},occ.map(o=>el('a',{class:'btn ghost sm',href:'#/create',style:'text-decoration:none'},o))),
+el('h2',{class:'disp',style:'margin:40px 0 10px'},'Questions'),
+[['Do recipients need an account?','No. They open the link and the gift plays.'],['Can the letter be read aloud?','Yes, using your device’s built-in voices. Higher-quality AI voices can be added later.'],['How much does it cost?','Drafting and previewing are free. You pay '+PAY.amount+' only when you publish your gift and get the link to send.'],['Is my message private?','In this prototype the gift is stored inside the link itself, not on a server. Anyone with the link can open it, and it can be forwarded.']].map(([q,a])=>el('details',{},el('summary',{},q),el('p',{},a))),
+el('footer',{},'Privacy · Terms · Contact · Help — EverLetter prototype'))}
+function sample(){stop();app.innerHTML='';const r=el('div',{style:'height:100dvh'});app.append(r);stop=renderGift(r,{...SAMPLE});r.append(el('a',{class:'btn ghost sm',href:'#/',style:'position:fixed;top:8px;left:8px;z-index:9;text-decoration:none;background:#fffd'},'← Home'))}
+function view(token){const g=dec(token);if(!g){shell(el('div',{class:'card'},el('h3',{},'This gift link looks incomplete'),el('p',{},'Ask the sender to share the link again.')));return}
+stop();app.innerHTML='';const r=el('div',{style:'height:100dvh'});app.append(r);stop=renderGift(r,clean(g))}
+function create(){let g;try{g=JSON.parse(localStorage.getItem('el_draft'))}catch(e){}g=clean(g||{...SAMPLE,to:'',from:'',title:'',greet:'',msg:'',sig:'',close:'Made with love, especially for you.'});
+const S=()=>{try{localStorage.setItem('el_draft',JSON.stringify(g))}catch(e){}};
+const F=(k,l,t='input',extra={})=>{const i=el(t,{id:'f_'+k,...extra,on:{input:e=>{g[k]=e.target.type==='checkbox'?e.target.checked:e.target.value;S();redraw()}}});i.value=g[k]??'';return[el('label',{for:'f_'+k},l),i]};
+const sel=(k,l,o)=>{const s=el('select',{id:'f_'+k,on:{change:e=>{g[k]=e.target.value;S();redraw()}}},o.map(([v,t])=>el('option',{value:v},t)));s.value=g[k];return[el('label',{for:'f_'+k},l),s]};
+const prev=el('div',{class:'prev'});const out=el('div');let c=()=>{},t;
+const redraw=()=>{clearTimeout(t);t=setTimeout(()=>{c();c=renderGift(prev,clean(g),{preview:true})},350)};
+const chk=el('input',{type:'checkbox',id:'prog',on:{change:e=>{g.prog=e.target.checked;S();redraw()}}});chk.checked=g.prog;
+const pub=()=>{if(!g.to.trim()||!g.from.trim()||!g.msg.trim()){out.innerHTML='';out.append(el('p',{role:'alert',style:'color:var(--acc)'},'Please add the recipient’s name, your name, and a message before publishing.'));return}
+ out.innerHTML='';out.append(el('div',{class:'card'},el('h3',{},'Ready to send'),el('p',{},'Drafting and previewing are free. Publishing your gift and getting the shareable link costs '+PAY.amount+'. Your draft stays saved while you pay.'),
+ el('div',{class:'row',style:'justify-content:flex-start;margin-top:12px'},PAY.link?[el('a',{class:'btn',href:PAY.link,target:'_blank',rel:'noopener',style:'text-decoration:none'},'Pay '+PAY.amount+' with Paystack'),el('button',{class:'btn ghost',on:{click:finish}},'I’ve paid — get my link')]:[el('button',{class:'btn ghost',on:{click:finish}},'Test mode: skip payment')]),
+ PAY.link?'':el('p',{style:'color:var(--mut);font-size:.8rem'},'Payments are not switched on yet, so this is test mode.')))};
+const finish=()=>{if(!g.to.trim()||!g.from.trim()||!g.msg.trim()){out.innerHTML='';out.append(el('p',{role:'alert',style:'color:var(--acc)'},'Please add the recipient’s name, your name, and a message before publishing.'));return}
+ const url=location.href.split('#')[0]+'#/g/'+enc(clean(g)),txt=`${g.from} made a gift for you ✉ ${url}`;out.innerHTML='';
+ out.append(el('p',{},'Your gift is ready. This link contains the whole gift, so it works in any browser. Anyone who has it can open it, and it can be forwarded.'),el('div',{class:'out'},url),
+ el('div',{class:'row',style:'margin-top:10px'},el('button',{class:'btn sm',on:{click:async e=>{try{await navigator.clipboard.writeText(url);e.target.textContent='Copied ✓'}catch(x){e.target.textContent='Select the link above and copy it'}}}},'Copy link'),
+ el('a',{class:'btn ghost sm',target:'_blank',rel:'noopener',href:'https://wa.me/?text='+encodeURIComponent(txt),style:'text-decoration:none'},'WhatsApp'),
+ el('a',{class:'btn ghost sm',href:`mailto:?subject=${encodeURIComponent('A gift for you')}&body=${encodeURIComponent(txt)}`,style:'text-decoration:none'},'Email'),
+ navigator.share?el('button',{class:'btn ghost sm',on:{click:()=>navigator.share({title:'A gift for you',url}).catch(()=>{})}},'Share…'):'',
+ el('a',{class:'btn ghost sm',href:'#/g/'+enc(clean(g)),style:'text-decoration:none'},'Open as recipient')))};
+const apply=(tone,sc)=>{const t=tpl(tone,sc,g.to,g.from);g.occ=sc;g.title=t.title;g.greet=t.greet;g.msg=t.msg;g.close=t.close;if(sc==='Birthday')g.fmt='birthday';if(tone==='love')g.th='rose';S();['title','greet','msg','close','fmt','th'].forEach(k=>{const e=$('#f_'+k);if(e)e.value=g[k]});const o=$('#f_occ');if(![...o.options].some(x=>x.value===sc))o.append(el('option',{value:sc},sc));o.value=sc;redraw()};
+const rs=el('select',{'aria-label':'Who is it for'},RELS.map(r=>el('option',{value:r[0]},r[0])));const ss=el('select',{'aria-label':'The moment'});
+const toneOf=()=>RELS.find(r=>r[0]===rs.value)[1];const fillSc=()=>{ss.innerHTML='';Object.keys(TONES[toneOf()]).forEach(x=>ss.append(el('option',{value:x},x)))};rs.addEventListener('change',fillSc);fillSc();
+const quick=el('div',{class:'card',style:'margin-bottom:8px'},el('strong',{},'Quick start'),el('div',{class:'two'},el('div',{},el('label',{},'Who is it for?'),rs),el('div',{},el('label',{},'The moment'),ss)),el('button',{class:'btn ghost sm',style:'margin-top:10px',on:{click:()=>apply(toneOf(),ss.value)}},'Fill with this template'),el('p',{style:'color:var(--mut);font-size:.8rem;margin:8px 0 0'},'Replaces the title, greeting, message and closing with an editable starting point. Your names stay.'));
+shell(el('h2',{class:'disp',style:'margin:10px 0'},'Gift Studio'),el('div',{class:'studio'},el('div',{},quick,
+ sel('occ','Occasion',['Birthday','Anniversary','Friendship','Graduation','Appreciation','Apology','Wedding','Valentine’s Day','Encouragement','Just Because'].map(x=>[x,x])),
+ el('div',{class:'two'},el('div',{},F('to','Recipient’s name','input',{maxlength:60})),el('div',{},F('from','Your name','input',{maxlength:60}))),
+ F('title','Gift title','input',{maxlength:120}),F('greet','Greeting (e.g. Dearest Ama,)','input',{maxlength:120}),
+ F('msg','Your message (blank line = new paragraph)','textarea',{maxlength:4000}),F('close','Closing message','input',{maxlength:200}),F('sig','Signature','input',{maxlength:60}),
+ el('div',{class:'two'},el('div',{},sel('fmt','Format',[['letter','Classic Letter'],['box','Surprise Box'],['birthday','Birthday Reveal']])),el('div',{},sel('th','Theme',[['gold','Champagne Gold'],['rose','Rose'],['midnight','Midnight'],['sage','Sage']]))),
+ el('label',{class:'chk'},chk,'Reveal the letter progressively'),
+ el('p',{style:'color:var(--mut);font-size:.85rem'},'Narration speed and voice can be changed in the player. Draft auto-saves on this device only.'),
+ el('div',{class:'row',style:'justify-content:flex-start;margin-top:14px'},el('button',{class:'btn',on:{click:pub}},'Publish & send ('+PAY.amount+')'),el('button',{class:'btn ghost',on:{click:redraw}},'Replay preview')),out),
+ el('div',{},prev)));if(PRE){rs.value=PRE.rel;fillSc();ss.value=PRE.sc;apply(PRE.tone,PRE.sc);PRE=null}redraw()}
+function route(){const h=location.hash||'#/';if(h.startsWith('#/g/'))view(h.slice(4));else if(h==='#/sample')sample();else if(h==='#/create')create();else home()}
+addEventListener('hashchange',route);route();
+</script></body></html>

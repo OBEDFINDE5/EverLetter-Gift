@@ -1,0 +1,8 @@
+{
+  "name": "Remix EverLetter",
+  "description": "Create a personal digital gift with your words, memories, music, and a voice that brings every message to life.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
